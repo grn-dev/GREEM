@@ -1,0 +1,32 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Port": 15737,
+          "Host": "localhost"
+        }
+      ],
+      "UpstreamPathTemplate": "/01/{everything}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Port": 46007,
+          "Host": "localhost"
+        }
+      ],
+      "UpstreamPathTemplate": "/02/{everything}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+    }
+
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:43277"
+  }
+}
