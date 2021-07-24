@@ -22,6 +22,7 @@ namespace gateway
                     .ConfigureAppConfiguration(
                           ic => ic.AddJsonFile(Path.Combine("ocelot.json")))
                     .UseStartup<Startup>();
+            builder.UseUrls("http://localhost:5000/");
             var host = builder.Build();
             return host;
         }

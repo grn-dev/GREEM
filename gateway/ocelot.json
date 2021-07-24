@@ -5,7 +5,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Port": 15737,
+          "Port": 5001,
           "Host": "localhost"
         }
       ],
@@ -17,7 +17,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Port": 46007,
+          "Port": 5002,
           "Host": "localhost"
         }
       ],
@@ -27,6 +27,6 @@
 
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:43277"
+    "BaseUrl": "http://localhost:5000"
   }
 }
