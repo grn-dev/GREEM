@@ -1,8 +1,10 @@
 {
   "Routes": [
     {
+      "UseServiceDiscovery": true,
       "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "http",
+      "ServiceName": "service01",
       "DownstreamHostAndPorts": [
         {
           "Port": 5001,
@@ -13,6 +15,8 @@
       "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
     },
     {
+      "UseServiceDiscovery": true,
+      "ServiceName": "service02",
       "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -27,6 +31,11 @@
 
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5000"
+    "ServiceDiscoveryProvider": {
+      "Scheme": "https",
+      "Host": "localhost",
+      "Port": 8500,
+      "Type": "Consul"
+    }
   }
 }

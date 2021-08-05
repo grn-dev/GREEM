@@ -1,19 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Service01
 {
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -28,6 +22,7 @@ namespace Service01
         {
 
             services.AddControllers();
+            services.AddConsulConfig(Configuration);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Service01", Version = "v1" });
@@ -47,6 +42,7 @@ namespace Service01
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseConsul(Configuration);
 
             app.UseAuthorization();
 
@@ -54,6 +50,6 @@ namespace Service01
             {
                 endpoints.MapControllers();
             });
-        }
+        } 
     }
 }
