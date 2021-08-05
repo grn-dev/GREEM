@@ -1,0 +1,4 @@
+consul.exe -- in path
+consul agent -dev 
+up Ui in port http://localhost:8500/ui/dc1/services
+--------------------------------
